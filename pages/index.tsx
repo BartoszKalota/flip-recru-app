@@ -1,5 +1,6 @@
 import 'antd/dist/antd.css';
 
+import { Card } from 'components/card';
 import { Loader } from 'components/loader';
 import { Pagination } from 'components/pagination';
 import { API } from 'constants/api';
@@ -29,11 +30,7 @@ const Home = () => {
       <section className={styles.container}>
         <div className={styles.content}>
           {!isLoading && planets?.results ? (
-            planets.results.map(({ name }, i) => (
-              <div className={styles.card} key={i}>
-                <p className={styles['card-title']}>{name}</p>
-              </div>
-            ))
+            planets.results.map(({ name }, i) => <Card name={name} key={i} />)
           ) : (
             <Loader />
           )}

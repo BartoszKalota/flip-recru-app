@@ -6,7 +6,3 @@ export interface IPlanetsList {
 	next?: string;
 	previous?: string;
 }
-
-export interface IProps {
-  planets: IPlanetsList;
-}

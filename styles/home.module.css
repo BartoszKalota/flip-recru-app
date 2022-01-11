@@ -15,38 +15,8 @@
   justify-content: center;
 }
 
-.card {
-  padding: 1.5rem;
-  margin: 1rem;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: calc(33% - 1.8rem);
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.card:hover {
-  box-shadow: 0px 0px 10px 1px rgb(255, 238, 0);
-}
-
-.card-title {
-  text-align: center;
-  margin: 0;
-}
-
 @media screen and (max-width: 1040px) {
   .content {
     justify-content: flex-start;
   }
-
-  .card {
-    width: calc(50% - 2rem);
-  }
 }
-
-@media screen and (max-width: 639px) {
-  .card {
-    width: 100%;
-  }
-} 
