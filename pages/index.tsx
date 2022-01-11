@@ -1,6 +1,7 @@
 import 'antd/dist/antd.css';
 
 import { Loader } from 'components/loader';
+import { Pagination } from 'components/pagination';
 import { API } from 'constants/api';
 import { IPlanetsList, IProps } from 'interfaces/iplanets-list';
 import type { GetStaticProps } from 'next';
@@ -18,16 +19,20 @@ const Home: React.FC<IProps> = ({ planets }) => {
   console.log(planets);
   return (
     <main className={styles.main}>
-      <section className={styles.content}>
-        {planets?.results ? (
-          planets.results.map(({ name }, i) => (
-            <div className={styles.card} key={i}>
-              <p className={styles['card-title']}>{`${i + 1}. ${name}`}</p>
-            </div>
-          ))
-        ) : (
-          <Loader />
-        )}
+      <section className={styles.container}>
+        <div className={styles.content}>
+          {planets?.results ? (
+            planets.results.map(({ name }, i) => (
+              <div className={styles.card} key={i}>
+                <p className={styles['card-title']}>{`${i + 1}. ${name}`}</p>
+              </div>
+            ))
+          ) : (
+            <Loader />
+          )}
+        </div>
+
+        <Pagination />
       </section>
     </main>
   );
