@@ -2,6 +2,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  position: unset;
+  bottom: unset;
+  background: rgb(182, 181, 181);
+  padding: 0;
 }
 
 .pagination-container {
@@ -11,4 +15,12 @@
 
 .pagination-number {
   font-size: 2rem;
+}
+
+@media screen and (max-width: 639px) {
+  .pagination-section {
+    position: sticky;
+    bottom: 0;
+    padding: 1rem 0;
+  }
 }

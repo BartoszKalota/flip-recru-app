@@ -12,6 +12,7 @@
 .content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
@@ -20,7 +21,7 @@
   color: rgba(0, 0, 0, 0.85);
   font-size: 1.5rem;
   cursor: pointer;
-  width: calc(50% - 2rem);
+  width: calc(33% - 1.8rem);
   background-color: #fff;
   border-radius: 8px;
 }
@@ -33,3 +34,19 @@
   text-align: center;
   margin: 0;
 }
+
+@media screen and (max-width: 1040px) {
+  .content {
+    justify-content: flex-start;
+  }
+
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .card {
+    width: 100%;
+  }
+} 
