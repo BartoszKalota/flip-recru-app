@@ -63,7 +63,9 @@ const PlanetPage = ({ planet }: IProps) => {
 
         <div className={styles['details-section']}>
           {planetDetailsKeys.map((planetDetailKey) => (
-            <div className={styles['detail-item']}>
+            <div
+              className={styles['detail-item']}
+              key={planetCopy[planetDetailKey]}>
               <div className={styles['detail-key']}>
                 <p className={styles['detail-text']}>
                   {`${getPreparedTitle(planetDetailKey)}:`}
