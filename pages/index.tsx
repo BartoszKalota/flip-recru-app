@@ -6,6 +6,7 @@ import { Pagination } from 'components/pagination';
 import { API } from 'constants/api';
 import { IPlanetsList } from 'interfaces/iplanets-list';
 import { useEffect, useState } from 'react';
+import { getIdFromUrl } from 'services';
 import styles from 'styles/home.module.css';
 
 const Home = () => {
@@ -29,7 +30,9 @@ const Home = () => {
     <>
       <div className={styles.content}>
         {!isLoading && planets?.results ? (
-          planets.results.map(({ name }, i) => <Card name={name} key={i} />)
+          planets.results.map(({ name, url }, i) => (
+            <Card key={i} name={name} planetId={getIdFromUrl(url)} />
+          ))
         ) : (
           <Loader />
         )}

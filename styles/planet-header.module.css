@@ -1,0 +1,9 @@
+.card-header-container {
+  position: relative;
+}
+
+.card-header {
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+}
