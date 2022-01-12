@@ -31,7 +31,12 @@ const Home = () => {
       <div className={styles.content}>
         {!isLoading && planets?.results ? (
           planets.results.map(({ name, url }, i) => (
-            <Card key={i} name={name} planetId={getIdFromUrl(url)} />
+            <Card
+              key={i}
+              name={name}
+              planetId={getIdFromUrl(url)}
+              onClick={() => setIsLoading(true)}
+            />
           ))
         ) : (
           <Loader />
