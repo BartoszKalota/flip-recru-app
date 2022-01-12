@@ -18,7 +18,11 @@ export const AppLayout = ({ children }: IProps) => (
 
     <Header />
 
-    {children}
+    <main className={styles.main}>
+      <section className={styles.container}>
+        {children}
+      </section>
+    </main>
 
     <Footer />
   </div>

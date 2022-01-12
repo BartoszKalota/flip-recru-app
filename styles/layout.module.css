@@ -3,3 +3,14 @@
   flex-direction: column;
   min-height: calc(100vh);
 }
+
+.main {
+  flex-grow: 1;
+  padding: 1.25rem;
+}
+
+.container {
+  background: rgb(182, 181, 181);
+  padding: 1.25rem;
+  border-radius: 16px;
+}

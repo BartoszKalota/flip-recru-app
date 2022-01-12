@@ -1,14 +1,3 @@
-.main {
-  flex-grow: 1;
-  padding: 1.25rem;
-}
-
-.container {
-  background: rgb(182, 181, 181);
-  padding: 1.25rem;
-  border-radius: 16px;
-}
-
 .content {
   display: flex;
   flex-wrap: wrap;

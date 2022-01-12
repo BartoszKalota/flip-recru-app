@@ -26,26 +26,24 @@ const Home = () => {
   }, [currentPage]);
 
   return (
-    <main className={styles.main}>
-      <section className={styles.container}>
-        <div className={styles.content}>
-          {!isLoading && planets?.results ? (
-            planets.results.map(({ name }, i) => <Card name={name} key={i} />)
-          ) : (
-            <Loader />
-          )}
-        </div>
-
-        {!isLoading && (
-          <Pagination
-            isPrevPageAvailable={!!planets?.previous}
-            isNextPageAvailable={!!planets?.next}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+    <>
+      <div className={styles.content}>
+        {!isLoading && planets?.results ? (
+          planets.results.map(({ name }, i) => <Card name={name} key={i} />)
+        ) : (
+          <Loader />
         )}
-      </section>
-    </main>
+      </div>
+
+      {!isLoading && (
+        <Pagination
+          isPrevPageAvailable={!!planets?.previous}
+          isNextPageAvailable={!!planets?.next}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      )}
+    </>
   );
 };
 
