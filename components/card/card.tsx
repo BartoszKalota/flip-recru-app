@@ -10,7 +10,9 @@ interface IProps {
 export const Card = ({ name, planetId, onClick }: IProps) => (
   <Link href={`/planet/${planetId}`}>
     <div className={styles.card} onClick={onClick}>
-      <p className={styles['card-title']}>{name}</p>
+      <p className={styles['card-title']} data-testid="card-name">
+        {name}
+      </p>
     </div>
   </Link>
 );

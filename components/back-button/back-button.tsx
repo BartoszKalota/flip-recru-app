@@ -13,7 +13,8 @@ export const BackButton = ({ onBack }: IProps) => (
     shape="circle"
     size="large"
     color="primary"
-    icon={<LeftOutlined />}
+    icon={<LeftOutlined data-testid="left-arrow-icon" />}
     onClick={onBack}
+    data-testid="back-button"
   />
 );
