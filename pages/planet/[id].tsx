@@ -1,3 +1,4 @@
+import { Head } from 'components/head';
 import { PlanetHeader } from 'components/planet-header';
 import { API } from 'constants/api';
 import { IPlanet } from 'interfaces/iplanet';
@@ -54,26 +55,30 @@ const PlanetPage = ({ planet }: IProps) => {
   ];
 
   return (
-    <div className={styles.card}>
-      <PlanetHeader planetName={planet?.name} />
+    <>
+      <Head planetName={planet?.name} />
 
-      <div className={styles['details-section']}>
-        {planetDetailsKeys.map((planetDetailKey) => (
-          <div className={styles['detail-item']}>
-            <div className={styles['detail-key']}>
-              <p className={styles['detail-text']}>
-                {`${getPreparedTitle(planetDetailKey)}:`}
-              </p>
+      <div className={styles.card}>
+        <PlanetHeader planetName={planet?.name} />
+
+        <div className={styles['details-section']}>
+          {planetDetailsKeys.map((planetDetailKey) => (
+            <div className={styles['detail-item']}>
+              <div className={styles['detail-key']}>
+                <p className={styles['detail-text']}>
+                  {`${getPreparedTitle(planetDetailKey)}:`}
+                </p>
+              </div>
+              <div className={styles['detail-value']}>
+                <p className={styles['detail-text']}>
+                  {planetCopy[planetDetailKey]}
+                </p>
+              </div>
             </div>
-            <div className={styles['detail-value']}>
-              <p className={styles['detail-text']}>
-                {planetCopy[planetDetailKey]}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

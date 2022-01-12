@@ -9,6 +9,7 @@ interface IProps {
 export const BackButton = ({ onBack }: IProps) => (
   <Button
     className={styles['back-button']}
+    style={{ position: 'absolute' }}
     shape="circle"
     size="large"
     color="primary"
