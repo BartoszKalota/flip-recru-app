@@ -1,10 +1,13 @@
-import React from "react";
-// import { render, fireEvent, waitForElement } from "@testing-library/react";
+import { render, cleanup } from '@testing-library/react';
+import React from 'react';
 
-// import LoginForm, { Props } from "../LoginForm";
+import { Footer } from '../footer';
 
-describe("<Footer />", () => {
-  test("should display a footer", async () => {
-    // ???
+describe('<Footer />', () => {
+  afterEach(cleanup);
+
+  it('should display proper text content', async () => {
+    const { getByTestId } = render(<Footer />);
+    expect(getByTestId('small')).toHaveTextContent('Copyright 2022');
   });
 });
