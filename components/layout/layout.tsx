@@ -1,5 +1,5 @@
-import { Footer } from 'components/footer';
-import { Header } from 'components/header';
+import Footer from 'components/footer';
+import Header from 'components/header';
 
 import styles from 'styles/layout.module.css';
 
@@ -9,7 +9,7 @@ interface IProps {
 
 export const AppLayout = ({ children }: IProps) => (
   <div className={styles.layout}>
-    <Header data-testid="header" />
+    <Header />
 
     <main className={styles.main}>
       <section className={styles.container}>
@@ -17,6 +17,6 @@ export const AppLayout = ({ children }: IProps) => (
       </section>
     </main>
 
-    <Footer data-testid="footer" />
+    <Footer />
   </div>
 );

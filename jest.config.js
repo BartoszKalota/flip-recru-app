@@ -4,6 +4,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
   },
-  moduleDirectories: ['node_modules', 'src'],
+  moduleDirectories: ['node_modules', './'],
   testEnvironment: 'jsdom',
 };
