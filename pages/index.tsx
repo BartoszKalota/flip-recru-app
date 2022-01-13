@@ -4,10 +4,9 @@ import { Card } from 'components/card';
 import Head from 'components/head';
 import { Loader } from 'components/loader';
 import { Pagination } from 'components/pagination';
-import { API } from 'constants/api';
 import { IPlanetsList } from 'interfaces/iplanets-list';
 import { useEffect, useState } from 'react';
-import { getIdFromUrl } from 'services';
+import { getIdFromUrl, getPlanetsList } from 'services';
 import styles from 'styles/home.module.css';
 
 const Home = () => {
@@ -15,16 +14,8 @@ const Home = () => {
   const [planets, setPlanets] = useState<IPlanetsList | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const getPlanetsList = async () => {
-    setIsLoading(true);
-    const res = await fetch(`${API}/planets/?page=${currentPage}`);
-    const data: IPlanetsList = await res.json();
-    setPlanets(data);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
-    getPlanetsList();
+    getPlanetsList(currentPage, setIsLoading, setPlanets);
   }, [currentPage]);
 
   return (

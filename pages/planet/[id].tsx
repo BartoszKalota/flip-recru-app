@@ -41,10 +41,10 @@ interface IProps {
 
 export const PlanetPage = ({ planet }: IProps) => (
   <>
-    <Head planetName={planet?.name} />
+    <Head planetName={planet?.name ?? 'Unavailable'} />
 
     <div className={styles.card}>
-      <PlanetHeader planetName={planet?.name} />
+      <PlanetHeader planetName={planet?.name ?? 'Unavailable'} />
       <PlanetDetails
         planet={planet as unknown as { [key: string]: string | number }}
       />
