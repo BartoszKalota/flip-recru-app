@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 
 import { Card } from 'components/card';
-import { Head } from 'components/head';
+import Head from 'components/head';
 import { Loader } from 'components/loader';
 import { Pagination } from 'components/pagination';
 import { API } from 'constants/api';

@@ -1,4 +1,4 @@
-import { Head } from 'components/head';
+import Head from 'components/head';
 import PlanetDetails from 'components/planet-details';
 import PlanetHeader from 'components/planet-header';
 import { API } from 'constants/api';
@@ -39,7 +39,7 @@ interface IProps {
   planet: IPlanet;
 }
 
-const PlanetPage = ({ planet }: IProps) => (
+export const PlanetPage = ({ planet }: IProps) => (
   <>
     <Head planetName={planet?.name} />
 
