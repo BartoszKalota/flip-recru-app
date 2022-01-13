@@ -1,4 +1,4 @@
-import { PaginationButton } from 'components/pagination-button';
+import PaginationButton from 'components/pagination-button';
 import styles from 'styles/pagination.module.css';
 
 interface IProps {
@@ -30,7 +30,11 @@ export const Pagination = ({
           isDisabled={!isPrevPageAvailable}
           onPageChange={handlePrevPage}
         />
-        <span className={styles['pagination-number']}>{currentPage}</span>
+        <span
+          className={styles['pagination-number']}
+          data-testid="current-page">
+          {currentPage}
+        </span>
         <PaginationButton
           type="next"
           isDisabled={!isNextPageAvailable}

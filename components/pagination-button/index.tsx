@@ -1,1 +1,3 @@
-export * from './pagination-button';
+import { PaginationButton } from './pagination-button';
+
+export default PaginationButton;
