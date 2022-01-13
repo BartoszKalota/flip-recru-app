@@ -9,7 +9,7 @@ interface IProps {
 
 export const AppLayout = ({ children }: IProps) => (
   <div className={styles.layout}>
-    <Header />
+    <Header data-testid="header" />
 
     <main className={styles.main}>
       <section className={styles.container}>
@@ -17,6 +17,6 @@ export const AppLayout = ({ children }: IProps) => (
       </section>
     </main>
 
-    <Footer />
+    <Footer data-testid="footer" />
   </div>
 );

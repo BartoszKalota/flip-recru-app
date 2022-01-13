@@ -3,21 +3,25 @@ import React from 'react';
 
 import { BackButton } from '../back-button';
 
-afterEach(cleanup);
-
 describe('<BackButton />', () => {
+  afterEach(cleanup);
+
   const onBackMock = jest.fn();
 
-  it('should launch onBack function once clicked', () => {
+  let backButtonComponent: HTMLElement;
+  let leftArrowIconComponent: HTMLElement;
+  beforeEach(() => {
     const { getByTestId } = render(<BackButton onBack={onBackMock} />);
-    fireEvent.click(getByTestId('back-button'));
+    backButtonComponent = getByTestId('back-button');
+    leftArrowIconComponent = getByTestId('left-arrow-icon');
+  });
+
+  it('should launch onBack function once clicked', () => {
+    fireEvent.click(backButtonComponent);
     expect(onBackMock).toHaveBeenCalled();
   });
 
   it('should contain LeftOutlined icon', () => {
-    const { getByTestId } = render(<BackButton onBack={onBackMock} />);
-    expect(
-      getByTestId('back-button').contains(getByTestId('left-arrow-icon')),
-    ).toBeTruthy();
+    expect(backButtonComponent.contains(leftArrowIconComponent)).toBeTruthy();
   });
 });
