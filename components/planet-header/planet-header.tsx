@@ -1,4 +1,4 @@
-import { BackButton } from 'components/back-button';
+import BackButton from 'components/back-button';
 import { useRouter } from 'next/router';
 import styles from 'styles/planet-header.module.css';
 
@@ -12,7 +12,9 @@ export const PlanetHeader = ({ planetName }: IProps) => {
   return (
     <div className={styles['card-header-container']}>
       <BackButton onBack={() => router.push('/')} />
-      <h2 className={styles['card-header']}>{planetName}</h2>
+      <h2 className={styles['card-header']} data-testid="title">
+        {planetName}
+      </h2>
     </div>
   );
 };
