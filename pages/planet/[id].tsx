@@ -1,12 +1,13 @@
 import { Head } from 'components/head';
-import { PlanetHeader } from 'components/planet-header';
+import PlanetDetails from 'components/planet-details';
+import PlanetHeader from 'components/planet-header';
 import { API } from 'constants/api';
 import { IPlanet } from 'interfaces/iplanet';
 import { IPlanetsList } from 'interfaces/iplanets-list';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { getIdFromUrl, getPreparedTitle } from 'services';
-import styles from 'styles/planet.module.css';
+import { getIdFromUrl } from 'services';
+import styles from 'styles/planet-page.module.css';
 
 interface IParams extends ParsedUrlQuery {
   id: string;
@@ -39,10 +40,6 @@ interface IProps {
 }
 
 const PlanetPage = ({ planet }: IProps) => {
-  const planetCopy = { ...planet } as unknown as {
-    [key: string]: string | number;
-  };
-
   const planetDetailsKeys = [
     'climate',
     'diameter',
@@ -60,25 +57,10 @@ const PlanetPage = ({ planet }: IProps) => {
 
       <div className={styles.card}>
         <PlanetHeader planetName={planet?.name} />
-
-        <div className={styles['details-section']}>
-          {planetDetailsKeys.map((planetDetailKey) => (
-            <div
-              className={styles['detail-item']}
-              key={planetCopy[planetDetailKey]}>
-              <div className={styles['detail-key']}>
-                <p className={styles['detail-text']}>
-                  {`${getPreparedTitle(planetDetailKey)}:`}
-                </p>
-              </div>
-              <div className={styles['detail-value']}>
-                <p className={styles['detail-text']}>
-                  {planetCopy[planetDetailKey]}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PlanetDetails
+          planet={planet as unknown as { [key: string]: string | number }}
+          planetDetailsKeys={planetDetailsKeys}
+        />
       </div>
     </>
   );

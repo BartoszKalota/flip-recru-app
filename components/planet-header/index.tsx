@@ -1,1 +1,3 @@
-export * from './planet-header';
+import { PlanetHeader } from './planet-header';
+
+export default PlanetHeader;

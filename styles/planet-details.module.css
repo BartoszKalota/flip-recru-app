@@ -1,13 +1,3 @@
-.card {
-  padding: 1.5rem;
-  margin: 1rem;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 1.5rem;
-  width: calc(100% - 2rem);
-  background-color: #fff;
-  border-radius: 8px;
-}
-
 .details-section {
   border-top: 2px solid rgb(170, 170, 170);
   display: flex;
