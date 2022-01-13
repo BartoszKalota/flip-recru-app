@@ -39,31 +39,17 @@ interface IProps {
   planet: IPlanet;
 }
 
-const PlanetPage = ({ planet }: IProps) => {
-  const planetDetailsKeys = [
-    'climate',
-    'diameter',
-    'gravity',
-    'orbital_period',
-    'population',
-    'rotation_period',
-    'surface_water',
-    'terrain',
-  ];
+const PlanetPage = ({ planet }: IProps) => (
+  <>
+    <Head planetName={planet?.name} />
 
-  return (
-    <>
-      <Head planetName={planet?.name} />
-
-      <div className={styles.card}>
-        <PlanetHeader planetName={planet?.name} />
-        <PlanetDetails
-          planet={planet as unknown as { [key: string]: string | number }}
-          planetDetailsKeys={planetDetailsKeys}
-        />
-      </div>
-    </>
-  );
-};
+    <div className={styles.card}>
+      <PlanetHeader planetName={planet?.name} />
+      <PlanetDetails
+        planet={planet as unknown as { [key: string]: string | number }}
+      />
+    </div>
+  </>
+);
 
 export default PlanetPage;
